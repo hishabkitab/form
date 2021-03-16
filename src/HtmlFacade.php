@@ -5,7 +5,7 @@ namespace HishabKitab\Form;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \HishabKitab\Form\Html
+ * @see \HishabKitab\Form\HtmlBuilder
  */
 class HtmlFacade extends Facade
 {

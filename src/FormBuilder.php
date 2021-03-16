@@ -14,7 +14,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Traits\Macroable;
 
-class Form
+class FormBuilder
 {
     use Macroable, Componentable {
         Macroable::__call as macroCall;
@@ -24,7 +24,7 @@ class Form
     /**
      * The HTML builder instance.
      *
-     * @var Html
+     * @var HtmlBuilder
      */
     protected $html;
 
@@ -110,13 +110,13 @@ class Form
     /**
      * Create a new form builder instance.
      *
-     * @param Html $html
+     * @param HtmlBuilder $html
      * @param UrlGenerator $url
      * @param Factory $view
      * @param  string                                     $csrfToken
      * @param  Request                                    $request
      */
-    public function __construct(Html $html, UrlGenerator $url, Factory $view, $csrfToken, Request $request = null)
+    public function __construct(HtmlBuilder $html, UrlGenerator $url, Factory $view, $csrfToken, Request $request = null)
     {
         $this->url = $url;
         $this->html = $html;

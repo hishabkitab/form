@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Traits\Macroable;
 
-class Html
+class HtmlBuilder
 {
     use Macroable, Componentable {
         Macroable::__call as macroCall;

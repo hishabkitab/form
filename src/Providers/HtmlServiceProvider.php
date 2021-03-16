@@ -2,8 +2,8 @@
 
 namespace HishabKitab\Form\Providers;
 
-use HishabKitab\Form\Form;
-use HishabKitab\Form\Html;
+use HishabKitab\Form\FormBuilder;
+use HishabKitab\Form\HtmlBuilder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -30,8 +30,8 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
 
         $this->registerFormBuilder();
 
-        $this->app->alias('html', Html::class);
-        $this->app->alias('form', Form::class);
+        $this->app->alias('html', HtmlBuilder::class);
+        $this->app->alias('form', FormBuilder::class);
 
         $this->registerBladeDirectives();
     }
@@ -44,7 +44,7 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
     protected function registerHtmlBuilder()
     {
         $this->app->singleton('html', function ($app) {
-            return new Html($app['url'], $app['view']);
+            return new HtmlBuilder($app['url'], $app['view']);
         });
     }
 
@@ -56,7 +56,7 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('form', function ($app) {
-            $form = new Form($app['html'], $app['url'], $app['view'], $app['session.store']->token(), $app['request']);
+            $form = new FormBuilder($app['html'], $app['url'], $app['view'], $app['session.store']->token(), $app['request']);
 
             return $form->setSessionStore($app['session.store']);
         });
@@ -71,8 +71,8 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
     {
         $this->app->afterResolving('blade.compiler', function (BladeCompiler $bladeCompiler) {
             $namespaces = [
-                'Html' => get_class_methods(Html::class),
-                'Form' => get_class_methods(Form::class),
+                'Html' => get_class_methods(HtmlBuilder::class),
+                'Form' => get_class_methods(FormBuilder::class),
             ];
 
             foreach ($namespaces as $namespace => $methods) {
@@ -97,6 +97,6 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function provides()
     {
-        return ['html', 'form', Html::class, Form::class];
+        return ['html', 'form', HtmlBuilder::class, FormBuilder::class];
     }
 }
