@@ -1,0 +1,41 @@
+{
+    "name": "hishabkitab/form",
+    "description": "form helpers for hishab kitab",
+    "homepage": "http://hishabkitab.com",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^8.12"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1"
+    },
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Hafijul Islam",
+            "email": "hafijul233@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "HishabKitab\\Form\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
