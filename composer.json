@@ -9,7 +9,7 @@
     "require-dev": {
         "fakerphp/faker": "^1.9.1"
     },
-    "license": "LGPL",
+    "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Hafijul Islam",
