@@ -18,7 +18,14 @@
     ],
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "HishabKitab\\Form\\Providers\\HtmlServiceProvider"
+            ],
+            "aliases": {
+                "Form": "HishabKitab\\Form\\FormFacade",
+                "Html": "HishabKitab\\Form\\HtmlFacade"
+            }
         }
     },
     "config": {
