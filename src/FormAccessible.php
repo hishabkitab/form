@@ -1,6 +1,6 @@
 <?php
 
-namespace HishabKitab\Form\Eloquent;
+namespace HishabKitab\Form;
 
 use Illuminate\Support\Str;
 use ReflectionClass;

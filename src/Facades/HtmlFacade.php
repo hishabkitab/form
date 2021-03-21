@@ -1,6 +1,6 @@
 <?php
 
-namespace HishabKitab\Form;
+namespace HishabKitab\Form\Facade;
 
 use Illuminate\Support\Facades\Facade;
 

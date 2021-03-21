@@ -1,15 +1,6 @@
 {
     "name": "hishabkitab/form",
-    "description": "form helpers for hishab kitab",
-    "homepage": "http://hishabkitab.com",
-    "type": "library",
-    "require": {
-        "laravel/framework": "^8.12"
-    },
-    "require-dev": {
-        "fakerphp/faker": "^1.9.1"
-    },
-    "license": "LGPL-3.0-or-later",
+    "description": "",
     "authors": [
         {
             "name": "Hafijul Islam",
@@ -18,9 +9,11 @@
     ],
     "extra": {
         "laravel": {
-            "dont-discover": [],
             "providers": [
-                "HishabKitab\\Form\\Providers\\HtmlServiceProvider"
+                "HishabKitab\\Form\\Providers\\HtmlServiceProvider",
+                "HishabKitab\\Form\\Providers\\FormServiceProvider",
+                "HishabKitab\\Form\\Providers\\FormServiceProvider",
+                "HishabKitab\\Form\\Providers\\BladeServiceProvider"
             ],
             "aliases": {
                 "Form": "HishabKitab\\Form\\FormFacade",
@@ -28,21 +21,11 @@
             }
         }
     },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
-            "HishabKitab\\Form\\": "src/"
+            "HishabKitab\\Form\\": "src/",
+            "HishabKitab\\Form\\Database\\Seeders\\": "database/seeders",
+            "HishabKitab\\Form\\Database\\Factories\\": "database/factories"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
