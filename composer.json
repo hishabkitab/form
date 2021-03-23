@@ -16,16 +16,17 @@
                 "HishabKitab\\Form\\Providers\\BladeServiceProvider"
             ],
             "aliases": {
-                "Form": "HishabKitab\\Form\\FormFacade",
-                "Html": "HishabKitab\\Form\\HtmlFacade"
+                "Form": "HishabKitab\\Form\\Facade\\FormFacade",
+                "Html": "HishabKitab\\Form\\Facade\\HtmlFacade",
+                "Field" :"HishabKitab\\Form\\Facade\\FieldFacade"
             }
         }
     },
     "autoload": {
         "psr-4": {
             "HishabKitab\\Form\\": "src/",
-            "HishabKitab\\Form\\Database\\Seeders\\": "database/seeders",
-            "HishabKitab\\Form\\Database\\Factories\\": "database/factories"
+            "HishabKitab\\Form\\Database\\Seeders\\": "database/seeders/",
+            "HishabKitab\\Form\\Database\\Factories\\": "database/factories/"
         }
     }
 }
