@@ -5,7 +5,7 @@
 @endsection
 
 @section('field')
-    {!! Form::text($name, $value,) !!}
+    {!! Form::text($name, $value) !!}
 @endsection
 
 

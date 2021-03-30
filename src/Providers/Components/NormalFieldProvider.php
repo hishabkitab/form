@@ -25,4 +25,19 @@ class NormalFieldProvider extends ServiceProvider
     {
         return [];
     }
+
+    /**
+     * Load All Normal Bootstrap Style Forms
+     *
+     * Example:
+     *
+     * Label
+     *  +-----------------------------------+
+     *  |            Field                  |
+     *  +-----------------------------------+
+     */
+    public function boot()
+    {
+     Form::component('normalText','form::components.')
+    }
 }
