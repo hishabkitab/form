@@ -1,9 +1,26 @@
-@extends('form::layouts.master')
+@extends('view::layouts.web.site.master')
+
+@push('css')
+    {!!  Html::style('css/pages/auth.css') !!}
+@endpush
 
 @section('content')
-    <h1>Hello World</h1>
+    <div class="content content-fixed content-auth-alt">
+        <div class="container ht-100p tx-center">
+            <div class="row justify-content-center">
+                <div class="form-group">
+                    {{ Label::normal('test') }}
+                </div>
+                {{ Field::text('text', 'text', ['class' => 'form-control']) }}
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!-- content -->
+@endsection
 
-    <p>
-        This view is loaded from module: {!! config('form.name') !!}
-    </p>
+@section('script')
+
+@endsection
+
+@section('js')
+
 @endsection

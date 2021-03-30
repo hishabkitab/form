@@ -103,6 +103,7 @@ trait FormAccessible
     /**
      * Get a ReflectionClass Instance
      * @return ReflectionClass
+     * @throws \ReflectionException
      */
     protected function getReflection()
     {

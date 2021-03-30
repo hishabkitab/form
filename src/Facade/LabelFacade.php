@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \HishabKitab\Form\FieldBuilder
  */
-class FieldFacade extends Facade
+class LabelFacade extends Facade
 {
 
     /**
@@ -17,6 +17,6 @@ class FieldFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'field';
+        return 'label';
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace HishabKitab\Form\View;
+namespace HishabKitab\Form;
 
 use BadMethodCallException;
 use DateTime;
@@ -30,8 +30,6 @@ class FieldBuilder extends FormBuilder
      * @var array
      */
     protected $labels = [];
-
-    protected $request;
 
     /**
      * The types of inputs to not fill values on by default.

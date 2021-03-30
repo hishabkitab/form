@@ -2,8 +2,11 @@
 
 namespace HishabKitab\Form\Providers;
 
+use HishabKitab\Form\Facade\LabelFacade;
+use HishabKitab\Form\FieldBuilder;
 use HishabKitab\Form\FormBuilder;
 use HishabKitab\Form\HtmlBuilder;
+use HishabKitab\Form\LabelBuilder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -16,7 +19,7 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @var array
      */
-    protected $directives = ['entities','decode','script','style','image','favicon','link','secureLink','linkAsset','linkSecureAsset','linkRoute','linkAction','mailto','email','ol','ul','dl','meta','tag','open','model','close','token','label','input','text','password','hidden','email','tel','number','date','datetime','datetimeLocal','time','url','file','textarea','select','selectRange','selectYear','selectMonth','getSelectOption','checkbox','radio','reset','image','color','submit','button','old'
+    protected $directives = ['entities', 'decode', 'script', 'style', 'image', 'favicon', 'link', 'secureLink', 'linkAsset', 'linkSecureAsset', 'linkRoute', 'linkAction', 'mailto', 'email', 'ol', 'ul', 'dl', 'meta', 'tag', 'open', 'model', 'close', 'token', 'label', 'input', 'text', 'password', 'hidden', 'email', 'tel', 'number', 'date', 'datetime', 'datetimeLocal', 'time', 'url', 'file', 'textarea', 'select', 'selectRange', 'selectYear', 'selectMonth', 'getSelectOption', 'checkbox', 'radio', 'reset', 'image', 'color', 'submit', 'button', 'old'
     ];
 
     /**
@@ -30,8 +33,14 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
 
         $this->registerFormBuilder();
 
+        $this->registerFieldBuilder();
+
+        $this->registerLabelBuilder();
+
         $this->app->alias('html', HtmlBuilder::class);
         $this->app->alias('form', FormBuilder::class);
+        $this->app->alias('field', FieldBuilder::class);
+        $this->app->alias('label', LabelBuilder::class);
 
         $this->registerBladeDirectives();
     }
@@ -79,7 +88,7 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
                 foreach ($methods as $method) {
                     if (in_array($method, $this->directives)) {
                         $snakeMethod = Str::snake($method);
-                        $directive = strtolower($namespace).'_'.$snakeMethod;
+                        $directive = strtolower($namespace) . '_' . $snakeMethod;
 
                         $bladeCompiler->directive($directive, function ($expression) use ($namespace, $method) {
                             return "<?php echo $namespace::$method($expression); ?>";
@@ -91,12 +100,34 @@ class HtmlServiceProvider extends ServiceProvider implements DeferrableProvider
     }
 
     /**
+     * Register Field providers
+     */
+    protected function registerFieldBuilder()
+    {
+        $this->app->singleton('field', function ($app) {
+            $field = new FieldBuilder($app['html'], $app['url'], $app['view'], $app['session.store']->token(), $app['request']);
+
+            return $field->setSessionStore($app['session.store']);
+        });
+    }
+
+    /**
+     * Register Label providers
+     */
+    protected function registerLabelBuilder()
+    {
+        $this->app->singleton('label', function ($app) {
+            return new LabelBuilder($app['html'], $app['url'], $app['view'], $app['session.store']->token(), $app['request']);
+        });
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return array
      */
     public function provides()
     {
-        return ['html', 'form', HtmlBuilder::class, FormBuilder::class];
+        return ['html', 'form', 'field', 'label', HtmlBuilder::class, FormBuilder::class, FieldBuilder::class, LabelFacade::class];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +12,9 @@
 |
 */
 
+use HishabKitab\Form\Http\Controllers\FormController;
+use Illuminate\Support\Facades\Route;
+
 Route::prefix('form')->group(function() {
-    Route::get('/', 'FormController@index');
+    Route::get('/', [FormController::class, 'index']);
 });

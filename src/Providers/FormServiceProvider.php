@@ -28,6 +28,7 @@ class FormServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+
     }
 
     /**
@@ -38,6 +39,7 @@ class FormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(HtmlServiceProvider::class);
     }
 
     /**
