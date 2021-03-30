@@ -1,0 +1,39 @@
+{
+    "name": "hishabkitab/form",
+    "description": "",
+    "authors": [
+        {
+            "name": "Hafijul Islam",
+            "email": "hafijul233@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "laravel/framework": "^8.12",
+        "laravelcollective/html": "^6.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HishabKitab\\Providers\\FormServiceProvider",
+                "Collective\\Html\\HtmlServiceProvider"
+            ],
+            "aliases": {
+                "Form": "Collective\\Html\\FormFacade",
+                "Html": "Collective\\Html\\HtmlFacade"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "HishabKitab\\Form\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
