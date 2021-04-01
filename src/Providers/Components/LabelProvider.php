@@ -3,7 +3,6 @@
 namespace HishabKitab\Form\Providers\Components;
 
 use Illuminate\Support\ServiceProvider;
-use Form;
 
 class LabelProvider extends ServiceProvider
 {
@@ -32,22 +31,22 @@ class LabelProvider extends ServiceProvider
      */
     public function boot()
     {
-        Form::macro('normalLabel', function ($name, $value, $required = false) {
+        \Form::macro('nLabel', function ($name, $value, $required = false) {
 
             if ($required) {
                 $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
             }
 
-            return Form::label($name, $value, [], false);
+            return \Form::label($name, $value, [], false);
         });
 
-        Form::macro('horizonLabel', function ($name, $value, $col_size = "col-md-2", $required = false) {
+        \Form::macro('hLabel', function ($name, $value, $required = false, $col_size = "col-md-2") {
 
             if ($required) {
                 $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
             }
 
-            return Form::label($name, $value, ['class' => "$col_size col-form-label"], false);
+            return \Form::label($name, $value, ['class' => "$col_size col-form-label"], false);
         });
     }
 }

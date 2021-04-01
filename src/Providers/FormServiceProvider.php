@@ -3,6 +3,7 @@
 namespace HishabKitab\Form\Providers;
 
 use HishabKitab\Form\Providers\Components\LabelProvider;
+use HishabKitab\Form\Providers\Components\NormalFieldProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
@@ -39,6 +40,7 @@ class FormServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(LabelProvider::class);
+        $this->app->register(NormalFieldProvider::class);
     }
 
     /**
