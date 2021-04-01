@@ -31,8 +31,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HishabKitab\\Providers\\FormServiceProvider",
-                "Collective\\Html\\HtmlServiceProvider"
+                "Collective\\Html\\HtmlServiceProvider",
+                "HishabKitab\\Form\\Providers\\FormServiceProvider"
             ],
             "aliases": {
                 "Form": "Collective\\Html\\FormFacade",
