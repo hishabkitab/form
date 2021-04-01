@@ -2,7 +2,7 @@
     {!! Form::nLabel($name, $label, $required) !!}
 
     @php
-        $options = ['class' => 'form-control form-control-range'];
+        $options = ['class' => 'form-control-range custom-range'];
 
         if(isset($required) && $required == true)
             $options['required'] = 'required';

@@ -2,6 +2,7 @@
 
 namespace HishabKitab\Form\Providers;
 
+use HishabKitab\Form\Providers\Components\HorizontalFieldProvider;
 use HishabKitab\Form\Providers\Components\LabelProvider;
 use HishabKitab\Form\Providers\Components\NormalFieldProvider;
 use Illuminate\Support\ServiceProvider;
@@ -41,6 +42,7 @@ class FormServiceProvider extends ServiceProvider
     {
         $this->app->register(LabelProvider::class);
         $this->app->register(NormalFieldProvider::class);
+        $this->app->register(HorizontalFieldProvider::class);
     }
 
     /**

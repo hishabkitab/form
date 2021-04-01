@@ -1,12 +1,14 @@
 <div class="form-group">
-    {!! Form::nLabel($name, $label, $required) !!}
+    {!!  Form::fLabel($name, $label, $required, ['class' => 'd-block mb-2']) !!}
+    <div class="custom-file">
+        @php
+            $options = ['class' => 'custom-file-input'];
 
-    @php
-        $options = ['class' => 'form-control'];
+            if(isset($required) && $required == true)
+                $options['required'] = 'required';
+        @endphp
 
-        if(isset($required) && $required == true)
-            $options['required'] = 'required';
-    @endphp
-
-    {!! Form::file($name, $default, array_merge($options, $attributes)) !!}
+        {!! Form::file($name, array_merge($options, $attributes)) !!}
+        {!! Form::nLabel($name, $label, $required, ['class' => 'custom-file-label']) !!}
+    </div>
 </div>

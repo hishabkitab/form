@@ -31,22 +31,30 @@ class LabelProvider extends ServiceProvider
      */
     public function boot()
     {
-        \Form::macro('nLabel', function ($name, $value, $required = false) {
+        \Form::macro('nLabel', function ($name, $value, $required = false, $options = []) {
 
             if ($required) {
                 $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
             }
 
-            return \Form::label($name, $value, [], false);
+            return \Form::label($name, $value, $options, false);
         });
 
-        \Form::macro('hLabel', function ($name, $value, $required = false, $col_size = "col-md-2") {
+        \Form::macro('hLabel', function ($name, $value, $required = false, $col_size = "col-md-2", $options = []) {
 
             if ($required) {
                 $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
             }
 
-            return \Form::label($name, $value, ['class' => "$col_size col-form-label"], false);
+            return \Form::label($name, $value, array_merge(['class' => "$col_size col-form-label"], $options), false);
+        });
+        \Form::macro('fLabel', function ($name, $value, $required = false, $options = []) {
+
+            if ($required) {
+                $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
+            }
+
+            return str_replace('label', 'span',\Form::label($name, $value, $options, false));
         });
     }
 }
