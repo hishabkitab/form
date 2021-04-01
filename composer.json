@@ -10,7 +10,9 @@
     "require": {
         "php": "^7.0|^8.0",
         "laravel/framework": "^8.12",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "twbs/bootstrap": "^4.6",
+        "fortawesome/font-awesome": "^5.15"
     },
     "config": {
         "optimize-autoloader": true,
