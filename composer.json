@@ -21,7 +21,8 @@
         "laravel/framework": "^8.12",
         "laravelcollective/html": "^6.2",
         "twbs/bootstrap": "^4.6",
-        "fortawesome/font-awesome": "^5.15"
+        "fortawesome/font-awesome": "^5.15",
+        "nwidart/laravel-modules": "^8.2"
     },
     "config": {
         "optimize-autoloader": true,
