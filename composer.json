@@ -1,6 +1,15 @@
 {
     "name": "hishabkitab/form",
-    "description": "",
+    "description": "bootstrap 4 form builder",
+    "type": "library",
+    "keywords": [
+        "form",
+        "bootstrap4",
+        "hishabkitab",
+        "select",
+        "input"
+    ],
+    "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Hafijul Islam",
