@@ -48,6 +48,7 @@ class LabelProvider extends ServiceProvider
 
             return \Form::label($name, $value, array_merge(['class' => "$col_size col-form-label"], $options), false);
         });
+
         \Form::macro('fLabel', function ($name, $value, $required = false, $options = []) {
 
             if ($required) {
