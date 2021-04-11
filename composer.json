@@ -1,0 +1,51 @@
+{
+    "name": "hishabkitab/form",
+    "description": "bootstrap 4 form builder",
+    "type": "library",
+    "keywords": [
+        "form",
+        "bootstrap4",
+        "hishabkitab",
+        "select",
+        "input"
+    ],
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Hafijul Islam",
+            "email": "hafijul233@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "laravel/framework": "^8.12",
+        "laravelcollective/html": "^6.2",
+        "twbs/bootstrap": "^4.6",
+        "fortawesome/font-awesome": "^5.15",
+        "nwidart/laravel-modules": "^8.2"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Collective\\Html\\HtmlServiceProvider",
+                "HishabKitab\\Form\\Providers\\FormServiceProvider"
+            ],
+            "aliases": {
+                "Form": "Collective\\Html\\FormFacade",
+                "Html": "Collective\\Html\\HtmlFacade"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "HishabKitab\\Form\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
