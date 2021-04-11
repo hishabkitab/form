@@ -131,27 +131,26 @@ class NormalFieldProvider extends ServiceProvider
         \Form::component('nTextarea', 'form::normal_textarea', ['name', 'label', 'default', 'required', 'attributes']);
 
 
-
         /**
          * Create a select box field.
          *
-         * @param  string $name
-         * @param  array  $list
-         * @param  string|bool $selected
-         * @param  array  $selectAttributes
-         * @param  array  $optionsAttributes
-         * @param  array  $optgroupsAttributes
+         * @param string $name
+         * @param array $list
+         * @param string|bool $selected
+         * @param array $selectAttributes
+         * @param array $optionsAttributes
+         * @param array $optgroupsAttributes
          */
         \Form::component('nSelect', 'form::normal_select', ['name', 'label', 'data', 'selected', 'required', 'attributes']);
 
         /**
          * Create a select range field.
          *
-         * @param  string $name
-         * @param  string $begin
-         * @param  string $end
-         * @param  string $selected
-         * @param  array  $options
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
          *
          * @return \Illuminate\Support\HtmlString
          */
@@ -161,11 +160,11 @@ class NormalFieldProvider extends ServiceProvider
         /**
          * Create a select year field.
          *
-         * @param  string $name
-         * @param  string $begin
-         * @param  string $end
-         * @param  string $selected
-         * @param  array  $options
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
          *
          * @return mixed
          */
@@ -175,10 +174,10 @@ class NormalFieldProvider extends ServiceProvider
         /**
          * Create a select month field.
          *
-         * @param  string $name
-         * @param  string $selected
-         * @param  array  $options
-         * @param  string $format
+         * @param string $name
+         * @param string $selected
+         * @param array $options
+         * @param string $format
          *
          * @return \Illuminate\Support\HtmlString
          */
@@ -188,51 +187,27 @@ class NormalFieldProvider extends ServiceProvider
         /**
          * Create a checkbox input field.
          *
-         * @param  string $name
-         * @param  mixed  $value
-         * @param  bool   $checked
-         * @param  array  $options
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
          *
          * @return \Illuminate\Support\HtmlString
          */
         \Form::component('nCheckbox', 'form::normal_checkbox', ['name', 'label', 'checked', 'required', 'attributes']);
 
 
-
         /**
          * Create a radio button input field.
          *
-         * @param  string $name
-         * @param  mixed  $value
-         * @param  bool   $checked
-         * @param  array  $options
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
          *
          * @return \Illuminate\Support\HtmlString
          */
         \Form::component('nRadio', 'form::normal_radio', ['name', 'label', 'checked', 'required', 'attributes']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

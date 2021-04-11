@@ -1,12 +1,12 @@
 <div class="form-group">
-    {!! Form::nLabel($name, $label, $required) !!}
+	{!! Form::nLabel($name, $label, $required) !!}
+	
+	@php
+		$options = ['class' => 'form-control'];
 
-    @php
-        $options = ['class' => 'form-control'];
-
-        if(isset($required) && $required == true)
-            $options['required'] = 'required';
-    @endphp
-
-    {!! Form::checkbox($name, $checked, array_merge($options, $attributes)) !!}
+		if(isset($required) && $required == true)
+			$options['required'] = 'required';
+	@endphp
+	
+	{!! Form::checkbox($name, $checked, array_merge($options, $attributes)) !!}
 </div>

@@ -55,7 +55,7 @@ class LabelProvider extends ServiceProvider
                 $value .= '<span style="color: #dc3545; font-weight:700">*</span>';
             }
 
-            return str_replace('label', 'span',\Form::label($name, $value, $options, false));
+            return str_replace('label', 'span', \Form::label($name, $value, $options, false));
         });
     }
 }
