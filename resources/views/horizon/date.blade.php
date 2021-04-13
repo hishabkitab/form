@@ -1,6 +1,3 @@
-@push('style')
-<link rel="stylesheet" href="{{ asset('') }}">
-@endpush
 <div class="form-group row">
     {!! Form::hLabel($name, $label, $required, $col_size) !!}
 

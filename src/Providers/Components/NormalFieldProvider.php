@@ -120,7 +120,7 @@ class NormalFieldProvider extends ServiceProvider
          * @parem bool $required
          * @parem array $attributes
          */
-        \Form::component('nFile', 'form::normal.file', ['name', 'label', 'default' => null, 'required' => false, 'attributes' => []]);
+        \Form::component('nFile', 'form::normal.file', ['name', 'label', 'default' => null, 'required' => false, 'preview' => [false, 100, '/img/logo-app.png'],'attributes' => []]);
 
 
         /**
